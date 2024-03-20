@@ -5,12 +5,20 @@
  */
 package myinterviewcollection.epam;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -41,7 +49,48 @@ public class Epam {
 
         System.out.println("Sort list using stream functionality : " + sortList(intList));
         System.out.println("Multiply each element of list : " + multiplyEachElement(intList, 3));
+
+        List<Order> ordList = new ArrayList<>();
+        ordList.add(new Order("h", LocalDate.parse("2024-03-01")));
+        ordList.add(new Order("b", LocalDate.parse("2024-03-02")));
+        ordList.add(new Order("g", LocalDate.parse("2024-03-03")));
+        ordList.add(new Order("f", LocalDate.parse("2024-03-04")));
+        ordList.add(new Order("c", LocalDate.parse("2024-03-05")));
+
+        //find the recent three orders using stream api
+        List<Order> recentOrders = ordList.stream()
+//                .sorted(Collections.reverseOrder(Comparator.comparing(Order::getOrderDate)))
+                .sorted(Comparator.comparing(Order::getOrderDate).reversed())
+                .limit(3)
+                .collect(Collectors.toList());
+        System.out.println("Recent Orders:");
+        recentOrders.forEach(order -> System.out.println("Date: " + order.getOrderDate() + ", Name: " + order.getName()));
+    
         
+        PersonDAO personDAO = new PersonDAO();
+        // Adding persons to the cache
+        personDAO.addOrUpdate(new Person(1, "Alice"));
+        personDAO.addOrUpdate(new Person(2, "Bob"));
+        personDAO.addOrUpdate(new Person(3, "Charlie"));
+
+        // Getting person by ID
+        Person person1 = personDAO.getById(1);
+        System.out.println("Person 1: " + person1.getName());
+
+        // Removing person from cache
+        personDAO.removeFromCache(2);
+        Person person2 = personDAO.getById(2);
+        if (person2 == null) {
+            System.out.println("Person 2 not found in cache.");
+        }
+
+        // Clearing the cache
+        personDAO.clearCache();
+        Person person3 = personDAO.getById(3);
+        if (person3 == null) {
+            System.out.println("Person 3 not found in cache after clearing.");
+        }
+
     }
 
     public static int[] findMatchedIndices(int[] numArr, int sumElem) {
@@ -125,11 +174,11 @@ public class Epam {
             return 2;
         }
     }
-    
+
     public static List<Integer> sortList(List<Integer> intList) {
         return intList.stream().sorted().collect(Collectors.toList());
     }
-    
+
     public static List<Integer> multiplyEachElement(List<Integer> intList, int val) {
         return intList.stream().map(num -> num * val).collect(Collectors.toList());
     }

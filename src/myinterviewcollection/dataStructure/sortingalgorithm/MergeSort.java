@@ -20,13 +20,12 @@ public class MergeSort {
         while (i < left.length && j < right.length) {
             if (left[i] < right[j]) {
                 combined[index] = left[i];
-                index++;
                 i++;
             } else {
                 combined[index] = right[j];
-                index++;
                 j++;
             }
+            index++;
         }
         
         while (i < left.length) {            

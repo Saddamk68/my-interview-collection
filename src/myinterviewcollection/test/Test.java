@@ -5,7 +5,22 @@
  */
 package myinterviewcollection.test;
 
-import java.util.*;
+import com.sun.org.apache.xpath.internal.operations.Operation;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -31,6 +46,9 @@ public class Test {
         
 //        B b = (B) new A();
 //        b.fly();
+//        A a = (B) new B();
+//        a.fly();
+//        a.eat();
         A a = (A) new B();  // it will work without type casting also
         a.eat();
         a.sleep();
@@ -39,18 +57,18 @@ public class Test {
         // find sum of dollar amount
         int sum[] = new int[1];
         String strDollar = "#1 Tickets $50,000 Received $40. Expenses $800 . Cheque$2,00,000.";
+//        System.out.println(strDollar.substring(0, strDollar.length()-1));
         Arrays.stream(strDollar.split(" ")).filter(s -> s.contains("$"))
                 .forEach(s -> {
                     String r = s.substring(s.indexOf('$') + 1);
-                    r = r.replace(",", "").replace("$", "").replace(".", "");
+                    r = r.replace(",", "").replace(".", "");
                     sum[0] += Integer.valueOf(r);
                 });
         System.out.println("Sum of the dollar amount present in a sentence is : " + sum[0]);
-        String maxStr = Arrays.stream(strDollar.split(" "))
-                .max(Comparator.comparingInt(String::length))
-                .get();
+        String maxStr = Arrays.stream(strDollar.split(" ")).max(Comparator.comparingInt(String::length)).get();
+//        String maxStr = Arrays.stream(strDollar.split(" ")).max((s1, s2) -> s1.length() - s2.length()).get();
         System.out.println("Max length string is : " + maxStr);
-        System.out.println("Sort string list in dcending order : " + maxStr);
+        System.out.println("Sort string list in dcending order : ");
         Arrays.stream(strDollar.split(" "))
                 .sorted(Collections.reverseOrder(Comparator.comparing(String::length)))
                 .forEach(System.out::println);
@@ -60,8 +78,8 @@ public class Test {
         // filte even and odd from integer array using stream functionality
         Integer[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 2, 7, 7, 6};
         List<Integer> list = Arrays.asList(arr);
-        Map<Boolean, List<Integer>> result = list.stream()
-                .collect(Collectors.partitioningBy(num -> num % 2 == 0));
+        Map<Boolean, List<Integer>> result = list.stream().collect(Collectors.partitioningBy(num -> num % 2 == 0));
+//        list.stream().filter(num -> num%2 == 0).mapToInt(Integer::intValue).sum();
         System.out.println("Even numbers are : " + result.get(true));
         System.out.println("Odd numbers are : " + result.get(false));
         
@@ -78,6 +96,7 @@ public class Test {
         
         // find max value using stream functionality
         Integer maxNum = list.stream().max(Integer::compare).get();
+//        Integer maxNum = list.stream().max((n1, n2) -> n1-n2).get();
         System.out.println("Max value is : " + maxNum);
 
         list.stream().map(n -> n * n * n).filter(num -> num > 50).forEach(System.out::println);
@@ -291,17 +310,17 @@ class LinkedList {
 class A {
 
     public void eat() {
-
+        System.out.println("A is eating");
     }
 
     public void sleep() {
-
+        System.out.println("A is sleeping");
     }
 }
 
 class B extends A {
 
     public void fly() {
-
+        System.out.println("B is flying");
     }
 }

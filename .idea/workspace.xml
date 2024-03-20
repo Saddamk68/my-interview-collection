@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2d5c5cde-b3b1-42b9-8e5d-57370252600d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build/classes/myinterviewcollection/epam/Epam.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/myinterviewcollection/epam/Epam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myinterviewcollection/epam/Epam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myinterviewcollection/epam/Epam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myinterviewcollection/siemens/Siemen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myinterviewcollection/siemens/Siemen.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2cJR9L0cg8jaH3MQVmne8QUYPtL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Epam.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainClass.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MultiThreading.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyInterviewCollection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Siemen.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.myinterviewcollection.dataStructure.MainClass.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;S:/Programes/MyInterviewCollection/src/myinterviewcollection&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\Programes\MyInterviewCollection\src\myinterviewcollection" />
+      <recent name="S:\Programes\MyInterviewCollection\src\myinterviewcollection\recruitmentProgramForComp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="S:\Programes\MyInterviewCollection\src\DataStructure\common" />
+      <recent name="S:\Programes\MyInterviewCollection\src\DataStructure" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="myinterviewcollection.recruitmentProgramForComp.MainClass" />
+      <module name="MyInterviewCollection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myinterviewcollection.recruitmentProgramForComp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiThreading" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="myinterviewcollection.multithreading.MultiThreading" />
+      <module name="MyInterviewCollection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myinterviewcollection.multithreading.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Siemen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="myinterviewcollection.siemens.Siemen" />
+      <module name="MyInterviewCollection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myinterviewcollection.siemens.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="myinterviewcollection.test.Test" />
+      <module name="MyInterviewCollection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myinterviewcollection.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="myinterviewcollection.dataStructure.MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="myinterviewcollection.dataStructure.MainClass" />
+      <module name="MyInterviewCollection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myinterviewcollection.dataStructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.myinterviewcollection.dataStructure.MainClass" />
+        <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.MultiThreading" />
+        <item itemvalue="Application.Siemen" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d5c5cde-b3b1-42b9-8e5d-57370252600d" name="Changes" comment="" />
+      <created>1707827544126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707827544126</updated>
+    </task>
+    <servers />
+  </component>
+</project>

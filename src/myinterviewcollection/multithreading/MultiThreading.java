@@ -5,6 +5,9 @@
  */
 package myinterviewcollection.multithreading;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author $ADDAM
@@ -52,28 +55,68 @@ public class MultiThreading extends Thread {
         // starting child thread 
         ct.start();
         
-        // dead lock 
-//        thredDeadLock();
         int n = 8; // Number of threads 
         for (int i = 0; i < n; i++) {
             Thread object = new Thread(new MultithreadingDemo());
             object.start();
         }
 
+        // dead lock 
+        thredDeadLock();
+
     }
     
     public static void thredDeadLock() {
-        try {
-            System.out.println("Entering into Deadlock");
+            final String resource1 = "Resource-1";
+            final String resource2 = "Resource-2";
+            
+            Thread th1 = new Thread() {
+                public void run() {
+                    synchronized(resource1) {
+                        System.out.println("Thread 1 is acquiring lock on resource 1");
+                    }
+                    
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException ex) {
+                        // do nothing
+                    }
+                    
+                    synchronized(resource2) {
+                        System.out.println("Thread 1 is acquiring lock on resource 2");
+                    }
+                }
+            };
+            
+            Thread th2 = new Thread() {
+                public void run() {
+                    synchronized(resource2) {
+                        System.out.println("Thread 2 is acquiring lock on resource 2");
+                    }
+                    
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException ex) {
+                        // do nothing
+                    }
+                    
+                    synchronized(resource1) {
+                        System.out.println("Thread 2 is acquiring lock on resource 1");
+                    }
+                }
+            };
+            
+            th1.start();
+            th2.start();
 
-            Thread.currentThread().join();
-
-            // the following statement will never execute 
-            System.out.println("This statement will never execute");
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println("Entering into Deadlock");
+//            Thread.currentThread().join();
+//            // the following statement will never execute 
+//            System.out.println("This statement will never execute");
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }
 

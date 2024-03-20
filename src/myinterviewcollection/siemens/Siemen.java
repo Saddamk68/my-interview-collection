@@ -11,10 +11,6 @@ package myinterviewcollection.siemens;
  */
 public class Siemen {
 
-    /**
-     * @param args the command line arguments
-     */
-    
     int intVal = 0;
     
     public static void main(String[] args) {
@@ -38,7 +34,7 @@ public class Siemen {
         Integer p = 10;
         Integer q = 10;
         System.out.println(p == q); // true
-
+        
         System.out.println(new Integer(10) == new Integer(10)); // false
         
         System.out.println("Byte " + (Byte.valueOf("-128") == Byte.valueOf("-128"))); // true
@@ -53,13 +49,15 @@ public class Siemen {
         se.m1(se);
         System.out.println(se.toString() + " 5 : " + se.intVal);
         
-//        new Siemen().m3();
-                
+        new Siemen().m3();
+        
     }
     
     /**
-     * since java is a pass by value below se object is different than the main method se object
-     * hence its a local object for m1 method and it wont affect main method object (and its value)
+     * When you pass an object as an argument to a method, you're passing a copy of the reference to the object, 
+     * not the actual object itself. Any changes made to the object's state (fields) 
+     * inside the method will affect the original object outside the method, 
+     * but reassigning the reference inside the method won't affect the original reference outside the method.
      */
     private void m1(Siemen se) {
         /**
