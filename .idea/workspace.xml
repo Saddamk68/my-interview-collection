@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d5c5cde-b3b1-42b9-8e5d-57370252600d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/build/classes/myinterviewcollection/epam/Epam.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/myinterviewcollection/epam/Epam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myinterviewcollection/epam/Epam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myinterviewcollection/epam/Epam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myinterviewcollection/siemens/Siemen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myinterviewcollection/siemens/Siemen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/Programes/MyInterviewCollection/src/myinterviewcollection&quot;
+    &quot;last_opened_file_path&quot;: &quot;E:/Programes/MyInterviewCollection&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -127,13 +126,6 @@
         <item itemvalue="Application.Siemen" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -95,5 +95,7 @@ public class LinkedListMainMethod implements MainMethodInterface {
         System.out.println("\nLinked List after removing duplicates : ");
         myLinkedList.printList();
         
+        System.out.println("\nLinked List has loop : " + myLinkedList.hasLoop());
+        
     }   
 }

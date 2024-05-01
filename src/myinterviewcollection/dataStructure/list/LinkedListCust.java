@@ -139,7 +139,7 @@ public class LinkedListCust {
             addFirst(value);
             return true;
         }
-        if (index == length) {
+        if (index == length-1) {
             addLast(value);
             return true;
         }
@@ -203,7 +203,8 @@ public class LinkedListCust {
         Node slow = head;
         Node fast = head;
         
-        while (fast != null && fast.next != null) {
+//        while (fast != null && fast.next != null) {
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -220,12 +221,40 @@ public class LinkedListCust {
 //        for (int i = 0; i < length; i++) {
             if (map.containsKey(temp.value)) {
                 prev.next = temp.next;
+                length--;
             } else {
                 map.put(temp.value, temp);
                 prev = temp;
             }
             temp = temp.next;
         }
+    }
+    
+    public boolean hasLoop() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+        
+//        HashMap<Node, Integer> map = new HashMap<>();
+//        
+//        Node temp = head;
+//        int index = 0;
+//        while (temp != null) {
+//            if (map.containsKey(temp)) {
+//                return true;
+//            } else {
+//                map.put(temp, index++);
+//            }
+//            temp = temp.next;
+//        }
+//        return false;
     }
 
 }
