@@ -40,7 +40,18 @@ public class MinimumRequiredCars {
             }
         }
         System.out.println(String.format("Minimum number of car's required for trip are : %d", pFlag ? j + 1 : j));
-
+    }
+    
+    public static void moreSimpleApproach(Integer[] P, Integer[] C) {
+        int totalPersons = Arrays.stream(P).mapToInt(Integer::intValue).sum();
+        Arrays.sort(C, Collections.reverseOrder());
+        int i = 0;
+        
+        while (totalPersons > 0) {
+            totalPersons -= C[i];
+            i++;
+        }
+        System.out.println(String.format("Minimum number of car's required for trip are : %d", i));
     }
 
 }

@@ -35,19 +35,24 @@ public class Siemen {
         Integer q = 10;
         System.out.println(p == q); // true
         
+        Integer x = 128;
+        Integer y = 128;
+        System.out.println(x == y); // false
+        
         System.out.println(new Integer(10) == new Integer(10)); // false
         
         System.out.println("Byte " + (Byte.valueOf("-128") == Byte.valueOf("-128"))); // true
 
-        
+        int z = 0;
         Siemen se = new Siemen();
-        System.out.println(se.toString() + " 0 : " + se.intVal);
+        System.out.println(se.toString() + " 0 : " + se.intVal + " " + z);
         
         se.intVal = 1;
-        System.out.println(se.toString() + " 1 : " + se.intVal);
+        z = 1;
+        System.out.println(se.toString() + " 1 : " + se.intVal + " " + z);
 
-        se.m1(se);
-        System.out.println(se.toString() + " 5 : " + se.intVal);
+        se.m1(se, z);
+        System.out.println(se.toString() + " 5 : " + se.intVal + " " + z);
         
         new Siemen().m3();
         
@@ -59,14 +64,15 @@ public class Siemen {
      * inside the method will affect the original object outside the method, 
      * but reassigning the reference inside the method won't affect the original reference outside the method.
      */
-    private void m1(Siemen se) {
+    private void m1(Siemen se, int z) {
         /**
          * here we have passed the original se object
          * and then we modified it's value which mean 
          * we have changed the main method original se object value
          */
         se.intVal = 10;
-        System.out.println(se.toString() + " 2 : " + se.intVal);
+        z = 10;
+        System.out.println(se.toString() + " 2 : " + se.intVal + " " + z);
         
         /**
          * since we are creating a new object it will be created locally 
@@ -76,7 +82,8 @@ public class Siemen {
         se = new Siemen();
         System.out.println(se.toString() + " 3 : " + se.intVal);
         se.intVal = 100;
-        System.out.println(se.toString() + " 4 : " + se.intVal);
+        z = 100;
+        System.out.println(se.toString() + " 4 : " + se.intVal + " " + z);
     }
     
     private void m2() {

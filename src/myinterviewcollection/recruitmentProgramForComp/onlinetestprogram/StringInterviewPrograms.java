@@ -15,7 +15,7 @@ import java.util.Comparator;
 public class StringInterviewPrograms {
     
     // this will return the longest even number string present in a sentence
-    public static String findLongestEvenNbrString(String str) {
+    public static String findLongestEvenNbrStringWithSort(String str) {
         String[] strArr = str.split(" ");
         Arrays.sort(strArr, Comparator.comparing(String::length));
         for (int i = strArr.length-1; i >= 0; i--) {
@@ -24,6 +24,20 @@ public class StringInterviewPrograms {
             }
         }
         return null;
+    }
+    
+    public static String findLongestEvenNbrString(String str) {
+        String[] strArr = str.split(" ");
+        int maxLength = 0;
+        String result = "";
+        
+        for (int i = 0; i < strArr.length; i++) {
+            if (strArr[i].length()%2 == 0 && strArr[i].length() > maxLength) {
+                result = strArr[i];
+                maxLength = strArr[i].length();
+            }
+        }
+        return result;
     }
     
     // validate the sequence of parantheses to be open closed format eg. {}
@@ -36,12 +50,12 @@ public class StringInterviewPrograms {
             } else {
                 count--;
             }
+            // this is an important condition to check weather a right sequence has broken in between
             if (count < 0) 
                 return false;
         }
-
-        if (count == 0) return true;
-        return false;
+        
+        return count == 0;
     }
     
 }

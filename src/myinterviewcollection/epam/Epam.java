@@ -60,7 +60,8 @@ public class Epam {
         //find the recent three orders using stream api
         List<Order> recentOrders = ordList.stream()
 //                .sorted(Collections.reverseOrder(Comparator.comparing(Order::getOrderDate)))
-                .sorted(Comparator.comparing(Order::getOrderDate).reversed())
+//                .sorted(Comparator.comparing(Order::getOrderDate).reversed())
+                .sorted((ord1, ord2) -> ord2.getOrderDate().compareTo(ord1.getOrderDate()))
                 .limit(3)
                 .collect(Collectors.toList());
         System.out.println("Recent Orders:");
@@ -106,6 +107,7 @@ public class Epam {
         return null;
     }
 
+    // count number of times any string occurs in a sentence | ignore case
     public static void countOccurrence(String[] strArr) {
 //        System.out.println("Executing countOccurrence method");
 

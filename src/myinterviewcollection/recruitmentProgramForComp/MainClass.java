@@ -48,15 +48,18 @@ public class MainClass {
         
         Integer[] P = {1, 4, 1};
         Integer[] C = {1, 1, 5};
-        MinimumRequiredCars.calculate(P, C);
+        MinimumRequiredCars.calculate(P.clone(), C.clone());
+        MinimumRequiredCars.moreSimpleApproach(P.clone(), C.clone());
         
         P = new Integer[]{4, 4, 2, 4};
         C = new Integer[]{5, 5, 2, 5};
-        MinimumRequiredCars.calculate(P, C);
+        MinimumRequiredCars.calculate(P.clone(), C.clone());
+        MinimumRequiredCars.moreSimpleApproach(P.clone(), C.clone());
         
         P = new Integer[]{2, 3, 4, 2};
         C = new Integer[]{2, 5, 7, 2};
-        MinimumRequiredCars.calculate(P, C);
+        MinimumRequiredCars.calculate(P.clone(), C.clone());
+        MinimumRequiredCars.moreSimpleApproach(P.clone(), C.clone());
         
         System.out.println("Van-Eck Sequence is : " + VanEckSequence.generateVanEckSequence(100));
 

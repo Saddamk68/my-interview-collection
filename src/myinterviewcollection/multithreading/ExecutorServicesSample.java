@@ -44,7 +44,7 @@ public class ExecutorServicesSample {
     }
     
     public static void scheduleThreadPool() {
-        ExecutorService es = Executors.newScheduledThreadPool(10000);
+        ExecutorService es = Executors.newScheduledThreadPool(1000);
         
         for (int i=0; i<10; i++) {
             es.submit(() -> {

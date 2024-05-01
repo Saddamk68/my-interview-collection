@@ -28,7 +28,8 @@ public class OnlineTestProgram {
         remd = totalPage%sheetCount;
         divd = totalPage/sheetCount;
         
-        System.out.println("remd = " + remd + " & divd = " + divd);
+//        System.out.println("remd = " + remd + " & divd = " + divd);
+        System.out.print("Printing page number on a sheet : ");
         
         int sheetNo = 0;
         for (int j = 1; j <= divd; j++) {
@@ -47,7 +48,6 @@ public class OnlineTestProgram {
     }
 
     public static void duplicateNum() {
-
         List<Integer> numbers = new ArrayList<Integer>();
         for (int i = 1; i < 30; i++) {
             numbers.add(i);
@@ -58,7 +58,6 @@ public class OnlineTestProgram {
     }
     
     private static int findDuplicateNum(List<Integer> numbers) {
-        
         int highestNumber = numbers.size() - 1; // not generic
         int total = getSum(numbers);
         int duplicate = total - (highestNumber*(highestNumber+1)/2);
