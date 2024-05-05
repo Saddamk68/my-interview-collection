@@ -182,4 +182,57 @@ public class DoublyLinkedListCust {
         return temp;
     }
     
+    public void swapFirstAndLast() {
+        if (length < 2) return;
+        
+        int temp = head.value;
+        head.value = tail.value;
+        tail.value = temp;
+    }
+      
+    public void reverse() {
+        if (length < 2) return;
+        
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        
+        Node after = temp.next;
+        Node before = null;
+        while (temp != null) {
+            after = temp.next;
+            temp.next = before;
+            temp.prev = after;
+            before = temp;
+            temp = after;
+        }
+    }
+    
+    public boolean isPalindrome() {
+        if (length < 2) return true;
+        
+        Node start = head;
+        Node end = tail;
+        for (int i=0; i<length/2; i++) {
+            if (start.value != end.value) {
+                return false;
+            }
+            start = start.next;
+            end = end.prev;
+        }
+        return true;
+    }
+    
+    public void swapPairs() {
+        if (length < 2) return;
+        
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            int val = temp.value;
+            temp.value = temp.next.value;
+            temp.next.value = val;
+            temp = temp.next.next;
+        }
+    }
+        
 }

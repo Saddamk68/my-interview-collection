@@ -58,8 +58,8 @@ public class DoublyLinkedListMainMethod implements MainMethodInterface {
         System.out.println("\nDoubly Linked List after insert(0) at beginning:");
         myDLL.printList();
 
-        myDLL.insert(4, 4);
-        System.out.println("\nDoubly Linked List after insert(4) at end:");
+        myDLL.insert(5, 4);
+        System.out.println("\nDoubly Linked List after insert(5) at end:");
         myDLL.printList();
 
         System.out.println("\nRemoved node:");
@@ -77,6 +77,21 @@ public class DoublyLinkedListMainMethod implements MainMethodInterface {
         System.out.println("\nDoubly Linked List after remove() of last node:");
         myDLL.printList();
 
+        myDLL.swapFirstAndLast();
+        System.out.println("\nDoubly Linked List after swapFirstAndLast():");
+        myDLL.printList();
+        
+        myDLL.reverse();
+        System.out.println("\nDoubly Linked List after reverse():");
+        myDLL.printList();
+        
+        System.out.println("\nDoubly Linked List after isPalindrome() : " + myDLL.isPalindrome());
+        
+//        myDLL.append(9);
+        myDLL.swapPairs();
+        System.out.println("\nDoubly Linked List after swapPairs():");
+        myDLL.printList();
+        
     }
     
 }

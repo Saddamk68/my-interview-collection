@@ -12,7 +12,10 @@ import myinterviewcollection.dataStructure.mainMethodCall.DoublyLinkedListMainMe
 import myinterviewcollection.dataStructure.mainMethodCall.LinkedListMainMethod;
 import myinterviewcollection.dataStructure.mainMethodCall.MainMethodInterface;
 import java.util.Arrays;
+import myinterviewcollection.dataStructure.sortingalgorithm.BubbleSort;
+import myinterviewcollection.dataStructure.sortingalgorithm.InsertionSort;
 import myinterviewcollection.dataStructure.sortingalgorithm.MergeSort;
+import myinterviewcollection.dataStructure.sortingalgorithm.SelectionSort;
 import myinterviewcollection.dataStructure.sortingalgorithm.QuickSort;
 
 /**
@@ -33,12 +36,29 @@ public class MainClass {
         mainObj.call();
 
         int[] array = {3,1,4,2,7};
+        System.out.println("Unsorted Array : " + Arrays.toString(array));
         int[] sortedArr =  MergeSort.mergeSortAlgo(array);
         System.out.println("Merge Sorted Array : " + Arrays.toString(sortedArr));
         
         System.out.println("Unsorted Array : " + Arrays.toString(array));
-        QuickSort.quickSortAlgo(array);
-        System.out.println("Array after merge sort : " + Arrays.toString(array));
+        int[] quickSortArr = array.clone();
+        QuickSort.quickSortAlgo(quickSortArr);
+        System.out.println("Array after merge sort : " + Arrays.toString(quickSortArr));
+        
+        System.out.println("Unsorted Array : " + Arrays.toString(array));
+        int[] selectionSortArr = array.clone();
+        SelectionSort.selectionSortAlgo(selectionSortArr);
+        System.out.println("Array after selection sort : " + Arrays.toString(selectionSortArr));
+
+        System.out.println("Unsorted Array : " + Arrays.toString(array));
+        int[] bubbleSortArr = array.clone();
+        BubbleSort.bubbleSortAlgo(bubbleSortArr);
+        System.out.println("Array after bubble sort : " + Arrays.toString(bubbleSortArr));
+
+        System.out.println("Unsorted Array : " + Arrays.toString(array));
+        int[] insertionSortArr = array.clone();
+        InsertionSort.insertionSortAlgo(insertionSortArr);
+        System.out.println("Array after insertion sort : " + Arrays.toString(insertionSortArr));
 
         mainObj = new BinarySearchMainMethod();
         mainObj.call();

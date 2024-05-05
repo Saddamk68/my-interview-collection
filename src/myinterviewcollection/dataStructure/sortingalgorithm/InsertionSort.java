@@ -1,0 +1,25 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package myinterviewcollection.dataStructure.sortingalgorithm;
+
+/**
+ *
+ * @author saddam
+ */
+public class InsertionSort {
+
+    public static void insertionSortAlgo(int[] myArray) {
+        for (int i=1; i<myArray.length; i++) {
+            int temp = myArray[i];
+            int j = i-1;
+            while (j > -1 && temp < myArray[j]) {
+                myArray[j+1] = myArray[j];
+                myArray[j] = temp;
+                j--;
+            }
+        }
+    }
+    
+}
