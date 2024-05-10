@@ -33,8 +33,9 @@ public class BinaryTree {
         root = null;
     }
 
-    /* 
-     * Given a binary myinterviewcollection.DataStructure.tree, print its nodes according to the "bottom-up" postorder traversal.
+    /**
+     * Given a binary myinterviewcollection.DataStructure.tree, 
+     * print its nodes according to the "bottom-up" postorder traversal.
      * Left, Right, Root
      */
     public void printPostorder(Node node) {

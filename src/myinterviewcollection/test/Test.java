@@ -43,12 +43,11 @@ public class Test {
         System.out.println("num1 is : " + num1);
         System.out.println("num2 is : " + num2);
 
-        
 //        B b = (B) new A();
-//        b.fly();
+//        b.fly();   // runtime error upcasting is not allowed
 //        A a = (B) new B();
-//        a.fly();
-//        a.eat();
+//        a.fly();   // wont work
+//        a.eat();   // work
         A a = (A) new B();  // it will work without type casting also
         a.eat();
         a.sleep();
@@ -153,16 +152,15 @@ public class Test {
         PrintNumber p = n -> System.out.println("square is: " + Math.sqrt(n));
         p.print(25);
 
-        FileReader fileRead;
         String textStr = "";
         try {
-            fileRead = new FileReader("E:\\jsonFile.txt");
+            FileReader fileReader = new FileReader("E:\\jsonFile.txt");
             int r;
             try {
-                while ((r = fileRead.read()) != -1) {
+                while ((r = fileReader.read()) != -1) {
                     textStr += (char) r;
                 }
-                fileRead.close();
+                fileReader.close();
             } catch (IOException ex) {
                 Logger.getLogger("Error while executing while loop : ", ex.getMessage());
             }

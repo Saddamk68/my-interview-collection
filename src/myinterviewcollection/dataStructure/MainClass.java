@@ -65,7 +65,7 @@ public class MainClass {
         
         mainObj = new BinarySearchTreeMainMethod();
         mainObj.call();
-
+        
         mainObj = new BinaryTreeMainMethod();
         mainObj.call();
         
