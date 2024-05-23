@@ -13,10 +13,15 @@ import java.util.Arrays;
 public class MoveZeroes {
     
     public static void main(String args[]) {
-        int[] nums = {0, 1, 0, 3, 0, 0, 0, 13, 15, 12};
+        int[] nums = {0, 0, 1, 2, 0, 3, 0, 0, 0, 13, 15, 12, 0 , 0, 0};
         System.out.println("Given integer array is : " + Arrays.toString(nums));
-        moveZeroesToEnd(nums);
-        System.out.println("Moving zero to the end : " + Arrays.toString(nums));
+        int[] nums1 = nums.clone();
+        moveZeroesToEnd(nums1);
+        System.out.println("Moving zero to the end : " + Arrays.toString(nums1));
+        
+        int[] nums2 = nums.clone();
+        moveZeroesToEndUsingSwap(nums2);
+        System.out.println("Moving zero to the end using swap : " + Arrays.toString(nums2));
     }
     
     /**
@@ -25,12 +30,9 @@ public class MoveZeroes {
      * Note that you must do this in-place without making a copy of the array.
      */
     public static void moveZeroesToEnd(int[] nums) {
-        int countZero = 0;
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                countZero++;
-            } else {
+            if (nums[i] != 0) {
                 nums[j++] = nums[i];
             }
         }
@@ -40,4 +42,15 @@ public class MoveZeroes {
         }
     }
     
+    public static void moveZeroesToEndUsingSwap(int[] nums) {
+        int j = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[j];
+                nums[j++] = nums[i];
+                nums[i] = temp;
+            }
+        }
+    }
+   
 }
