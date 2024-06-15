@@ -7,6 +7,9 @@ package myinterviewcollection.java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -49,6 +52,12 @@ public class Java8MainClass {
         java8FeatureImpl.findDuplicates(new ArrayList<>(integerList));
         java8FeatureImpl.findMaxValueFromIntegerList(new ArrayList<>(integerList));
         java8FeatureImpl.findCubeOfIntegerListNotGreaterThan50(new ArrayList<>(integerList));
+
+        System.out.println("Factorial of 5 is : " + java8FeatureImpl.findFactorial(5));
+        
+        java8FeatureImpl.flatMap();
+                
+        System.out.println(java8FeatureImpl.isAnagramString("AAAABBBCC", "AABBBAACC"));
         
     }
 

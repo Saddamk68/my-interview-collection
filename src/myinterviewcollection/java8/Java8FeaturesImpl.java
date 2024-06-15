@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  *
@@ -35,6 +36,18 @@ public class Java8FeaturesImpl {
         map.forEach((key, count) -> {
             System.err.println(key + " : " + count);
         });
+    }
+    
+    public Map<Integer, Long> countCharOccurence(String str) {
+//        Map<Integer, Long> map = 
+        return str.chars()
+                .boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        
+//        map.entrySet().stream().forEach(entry -> {
+//            char ch = (char) entry.getKey().intValue();
+//            System.out.println(ch + " " + entry.getValue());
+//        });
     }
 
     /**
@@ -219,14 +232,64 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : map(), filter() find the cube of each element of
-     * the list not greater than 50
+     * @implementedFuntions : map(), filter() 
+     * find the cube of each element of the list not greater than 50
      */
     public void findCubeOfIntegerListNotGreaterThan50(List<Integer> list) {
         list.stream()
                 .map(n -> n * n * n)
                 .filter(num -> num > 50)
                 .forEach(System.out::println);
+    }
+    
+    /**
+     * @company : Siemens
+     * @implementedFuntions : IntStream, rangeClosed(), reduce()
+     * find the factorial of the given value
+     */
+    public int findFactorial(int val) {
+        return IntStream.rangeClosed(1, val)
+                .reduce(1, (x, y) -> x*y);
+    }
+    
+    /**
+     * @company : 
+     * @implementedFuntions : flatMap()
+     * flat the array list
+     */
+    public void flatMap() {
+        List<List<Integer>> nestedList = Arrays.asList(
+            Arrays.asList(1, 2, 3),
+            Arrays.asList(4, 5, 6),
+            Arrays.asList(7, 8, 9)
+        );
+        
+        List<Integer> result = nestedList.stream()
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
+        
+        System.out.println(result);
+    }
+    
+    /**
+     * @company : 
+     * @implementedFuntions : flatMap()
+     * flat the array list
+     */
+    public boolean isAnagramString(String str1, String str2) {        
+        if (str1.length() != str2.length()) return false;
+        
+        Map<Integer, Long> map1 = countCharOccurence(str1);
+        Map<Integer, Long> map2 = countCharOccurence(str2);
+
+        boolean[] isAnagram = new boolean[1];
+        isAnagram[0] = true;
+        map1.entrySet().stream().forEach(entry -> {
+            if (entry.getValue() != map2.get(entry.getKey())) {
+                isAnagram[0] = false;
+            }
+        });
+        return isAnagram[0];
     }
 
     /**

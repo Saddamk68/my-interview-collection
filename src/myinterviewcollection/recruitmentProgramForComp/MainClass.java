@@ -24,7 +24,7 @@ public class MainClass {
 //        interviewTestCodes.demo(null);  // compiler error due to ambiguty
         
         
-        int num = 3531;
+        int num = 3539;
         System.out.println(String.format("Arabic number %s wrote in roman as : %s", num,
                 ArabicToRoman.arabicToRoman(num)));
         
@@ -73,10 +73,10 @@ public class MainClass {
 //        System.out.println("");
 
         //longest substring which does not have duplicates
-        NonRepetedSubstring.longestSubstring("javaconceptoftheday");
+        StringInterviewPrograms.longestSubstring("javaconceptoftheday");
         System.out.println("");
         
-        NonRepetedSubstring.longestSubstring("thelongestsubstring");
+        StringInterviewPrograms.longestSubstring("thelongestsubstring");
         System.out.println("");
         
         int[] arr = {1, 3, 6, 4, 2};
