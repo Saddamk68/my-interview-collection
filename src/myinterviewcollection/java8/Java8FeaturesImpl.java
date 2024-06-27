@@ -173,7 +173,8 @@ public class Java8FeaturesImpl {
                 .boxed()
                 .collect(Collectors.toList());
 
-        Map<Boolean, List<Integer>> result = list.stream().collect(Collectors.partitioningBy(num -> num % 2 == 0));
+        Map<Boolean, List<Integer>> result = list.stream()
+                .collect(Collectors.partitioningBy(num -> num % 2 == 0));
 
         System.out.println("Even numbers are : " + result.get(true));
         System.out.println("Odd numbers are : " + result.get(false));
@@ -291,7 +292,7 @@ public class Java8FeaturesImpl {
         });
         return isAnagram[0];
     }
-
+    
     /**
      * @Data : creating dummy data
      */

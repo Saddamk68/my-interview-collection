@@ -5,7 +5,8 @@
 package myinterviewcollection.java8;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +25,7 @@ public class EmployeeProblems {
         List<Employee> empList = new ArrayList<>();
         
         empList.add(new Employee(1, "John", "Engineering", 50000));
+        empList.add(new Employee(12, "John", "Engineering", 51000));
         empList.add(new Employee(2, "Alice", "Sales", 60000));
         empList.add(new Employee(3, "Jhony", "Engineering", 60000));
         empList.add(new Employee(4, "James", "Engineering", 48000));
@@ -39,6 +41,9 @@ public class EmployeeProblems {
         
         findMaxSalariedEmployeeOfEachDepartment(empList);
         
+        findKthHighestSalariedEmployees(empList, 1);        
+        
+        print(sortEmployeeOnThereNameAndSalary(empList));        
         
         // Create HashMap with Employee as key and some arbitrary value as value
         HashMap<Employee, String> employeeMap = new HashMap<>();
@@ -68,6 +73,15 @@ public class EmployeeProblems {
         System.out.println("hashCode of emp1 : " + emp1.hashCode()); // Output: Employee 1
         System.out.println("hashCode of emp3 : " + emp3.hashCode()); // Output: Employee 1
 
+    }
+    
+    // print employee list
+    public static void print(List<Employee> empList) {
+        empList.forEach(emp -> {
+            System.out.println("Id : " + emp.getId() 
+                    + ", Name : " + emp.getName() 
+                    + ", Salary : " + emp.getSalary());
+        });
     }
     
     /**
@@ -109,6 +123,49 @@ public class EmployeeProblems {
 //            employee.ifPresent(emp -> System.out.println("Max Salary Employee: " + emp.getName()));
 //            System.out.println();
         });
+    }
+    
+    /**
+     * @company : 
+     * @implementedFuntions : map, distinct, sorted, reverseOrder, skip, findFirst, get
+     * find the k'th highest salary where k is an integer given by user
+     */
+    public static double findKthHighestSalary(List<Employee> empList, int k) {
+        return empList.stream()
+                .map(Employee::getSalary)
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .skip(k-1)
+                .findFirst()
+                .get();                
+    }
+    
+    /**
+     * @company : 
+     * @implementedFuntions : filter, forEach
+     * find the list of max salaried employees who has k'th highest salary
+     * where k is an integer given by user
+     */
+    public static void findKthHighestSalariedEmployees(List<Employee> empList, int k) {
+        double salary = findKthHighestSalary(empList, k);
+
+        System.out.println("k'th highest salaried employees are : ");
+        empList.stream().filter(emp -> emp.getSalary() == salary).forEach(emp -> {
+            System.out.println(emp.getId() + " " + emp.getName() + " " + emp.getDepartment() + " " + emp.getSalary());
+        });
+    }
+    
+    /**
+     * @company : Global Logic
+     * @implementedFuntions : sorted, comparing, thenComparing, reverseOrder
+     * sort the list of employee based on there name in ascending order
+     * and if the names are same sort them based on there salary in descending order
+     */
+    public static List<Employee> sortEmployeeOnThereNameAndSalary(List<Employee> empList) {
+        return empList.stream()
+                .sorted(Comparator.comparing(Employee::getName)
+                        .thenComparing(Collections.reverseOrder(Comparator.comparing(Employee::getSalary))))
+                .toList();
     }
     
 }
