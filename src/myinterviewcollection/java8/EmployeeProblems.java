@@ -43,7 +43,23 @@ public class EmployeeProblems {
         
         findKthHighestSalariedEmployees(empList, 1);        
         
-        print(sortEmployeeOnThereNameAndSalary(empList));        
+        System.out.println("sortEmployeeOnThereNameAndSalary : ");
+        print(sortEmployeeOnThereNameAndSalary(empList));
+        /**
+         * This will does the same thing as sortEmployeeOnThereNameAndSalary method does
+         */
+//        Collections.sort(empList, new Comparator<Employee>() {
+//            @Override
+//            public int compare(Employee e1, Employee e2) {
+//                // First compare by name (ascending)
+//                int nameComparison = e1.getName().compareTo(e2.getName());
+//                if (nameComparison != 0) {
+//                    return nameComparison;
+//                }
+//                // If names are the same, compare by salary (descending)
+//                return Double.compare(e2.getSalary(), e1.getSalary());
+//            }
+//        });
         
         // Create HashMap with Employee as key and some arbitrary value as value
         HashMap<Employee, String> employeeMap = new HashMap<>();
@@ -112,6 +128,7 @@ public class EmployeeProblems {
         Map<String, Optional<Employee>> maxSalaryEmployeesByDepartment = empList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment,
                         Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+//                        Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
 //                .entrySet().forEach(entry -> System.out.println(entry.getValue().get().getName()));
         
         maxSalaryEmployeesByDepartment.forEach((department, emp) -> {
@@ -164,7 +181,8 @@ public class EmployeeProblems {
     public static List<Employee> sortEmployeeOnThereNameAndSalary(List<Employee> empList) {
         return empList.stream()
                 .sorted(Comparator.comparing(Employee::getName)
-                        .thenComparing(Collections.reverseOrder(Comparator.comparing(Employee::getSalary))))
+//                        .thenComparing(Collections.reverseOrder(Comparator.comparing(Employee::getSalary))))
+                        .thenComparing(Comparator.comparing(Employee::getSalary).reversed()))
                 .toList();
     }
     

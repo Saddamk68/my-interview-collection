@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  *
  * @author saddam
+ * create thread safe counter class
  */
 public class CounterClass {
     
