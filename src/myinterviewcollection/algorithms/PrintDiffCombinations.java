@@ -57,14 +57,12 @@ public class PrintDiffCombinations {
         if (input == null || length <= 0 || length > input.length()) {
             return sequences;
         }
-
+        
         int n = input.length();
+        String extendedInput = input + input.substring(0, length - 1); // Extend the input to handle wrapping around
+        
         for (int i = 0; i < n; i++) {
-            StringBuilder sequence = new StringBuilder();
-            for (int j = 0; j < length; j++) {
-                sequence.append(input.charAt((i + j) % n));
-            }
-            sequences.add(sequence.toString());
+            sequences.add(extendedInput.substring(i, i + length));
         }
 
         return sequences;
