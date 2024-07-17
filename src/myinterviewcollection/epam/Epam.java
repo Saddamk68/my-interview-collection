@@ -24,32 +24,15 @@ public class Epam {
      */
     public static void main(String[] args) {
 
+        System.out.println(test(0));
+        System.out.println(test(1));
+        
         int[] numbers = {1, 3, 4, 5, 78, 9};
         System.out.println("Matched indices are : " + Arrays.toString(findMatchedIndices(numbers, 13)));
 
         String[] strArr = {"jaVa", "Spring", "Microservices", "java", "SqL", "Java", "cLoud", "spring"};
         countDuplicates(strArr);
-
-        System.out.println(test(0));
-        System.out.println(test(1));
-
-        List<Order> ordList = new ArrayList<>();
-        ordList.add(new Order("h", LocalDate.parse("2024-03-01")));
-        ordList.add(new Order("b", LocalDate.parse("2024-03-02")));
-        ordList.add(new Order("g", LocalDate.parse("2024-03-03")));
-        ordList.add(new Order("f", LocalDate.parse("2024-03-04")));
-        ordList.add(new Order("c", LocalDate.parse("2024-03-05")));
-
-        //find the recent three orders using stream api
-        List<Order> recentOrders = ordList.stream()
-//                .sorted(Collections.reverseOrder(Comparator.comparing(Order::getOrderDate)))
-//                .sorted(Comparator.comparing(Order::getOrderDate).reversed())
-                .sorted((ord1, ord2) -> ord2.getOrderDate().compareTo(ord1.getOrderDate()))
-                .limit(3)
-                .collect(Collectors.toList());
-        System.out.println("Recent Orders:");
-        recentOrders.forEach(order -> System.out.println("Date: " + order.getOrderDate() + ", Name: " + order.getName()));
-    
+        
         
         PersonDAO personDAO = new PersonDAO();
         // Adding persons to the cache
