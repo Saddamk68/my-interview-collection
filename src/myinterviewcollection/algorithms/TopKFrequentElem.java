@@ -32,8 +32,9 @@ public class TopKFrequentElem {
     /**
      * Given an integer array nums and an integer k, return the k most frequent elements.
      * You may return the answer in any order.
+     * 
+     * Time Complexity : the time complexity of below method is nlog(n) because of .sorted() method 
      */
-    // the time complexity of below method is nlog(n) because of .sorted() method 
     public static int[] topKFrequentUsingStream(int[] nums, int k) {
         Map<Integer, Long> map = Arrays.stream(nums)
                 .boxed() // to convert int to Integer

@@ -41,6 +41,7 @@ public class Java8FeaturesImpl {
     public Map<Integer, Long> countCharOccurence(String str) {
 //        Map<Integer, Long> map = 
         return str.chars()
+//                .mapToObj(ch -> (char) ch)
                 .boxed()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         
@@ -139,8 +140,8 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : max, Comparotor.comparingInt() find max length
-     * word from a given sentence
+     * @implementedFuntions : max, Comparotor.comparingInt() 
+     * find max length word from a given sentence
      */
     public String findMaxLengthWordFromGivenString(String str) {
         return Arrays.stream(str.split(" "))
@@ -153,8 +154,8 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : sorted, reverseOrder() find max length word from a
-     * given sentence
+     * @implementedFuntions : sorted, reverseOrder() 
+     * find max length word from a given sentence
      */
     public void sortGivenStringUsingStream(String str) {
         System.out.println("Sort string list in dcending order : ");
@@ -165,8 +166,8 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : boxed(), Arrays.stream(), partitioningBy() filter
-     * even and odd from integer array
+     * @implementedFuntions : boxed(), Arrays.stream(), partitioningBy() 
+     * filter even and odd from integer array
      */
     public void filterOddEvenNumber(int[] arr) {
         List<Integer> list = Arrays.stream(arr)
@@ -182,7 +183,8 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : mapToInt(), sum() find sum of an integer list
+     * @implementedFuntions : mapToInt(), sum() 
+     * find sum of an integer list
      */
     public int findSumOfIntegerList(List<Integer> list) {
         return list.stream()
@@ -192,21 +194,22 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : filter() remove duplicates using stream
-     * functionality
+     * @implementedFuntions : filter() 
+     * remove duplicates using stream functionality
      */
     public void removeDuplicates(List<Integer> list) {
         HashSet<Integer> set = new HashSet();
         System.out.println("After removing duplicate values : ");
         list.stream()
+//                .distinct()
                 .filter(num -> set.add(num))
                 .forEach(System.out::println);
     }
 
     /**
      * @company :
-     * @implementedFuntions : filter() find duplicates using stream
-     * functionality
+     * @implementedFuntions : filter() 
+     * find duplicates using stream functionality
      */
     public void findDuplicates(List<Integer> list) {
         HashSet<Integer> set = new HashSet();
@@ -219,7 +222,8 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : max() find max value using stream functionality
+     * @implementedFuntions : max() 
+     * find max value using stream functionality
      */
     public void findMaxValueFromIntegerList(List<Integer> list) {
         Integer maxNum = list.stream()
@@ -271,6 +275,21 @@ public class Java8FeaturesImpl {
         
         System.out.println(result);
     }
+        
+    /**
+     * @company : 
+     * @implementedFuntions : comparingByValue(), toMap(), LinkedHashMap
+     * sort a map in reverse order by its value
+     */
+    public <K, V extends Comparable<? super V>> LinkedHashMap<K, V> sortMapByValue(Map<K, V> map) {
+        return map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey, 
+                        Map.Entry::getValue, 
+                        (e1, e2) -> e1,
+                        LinkedHashMap::new));
+    }
     
     /**
      * @company : 
@@ -286,7 +305,7 @@ public class Java8FeaturesImpl {
         boolean[] isAnagram = new boolean[1];
         isAnagram[0] = true;
         map1.entrySet().stream().forEach(entry -> {
-            if (entry.getValue() != map2.get(entry.getKey())) {
+            if (entry.getValue().equals(map2.get(entry.getKey()))) {
                 isAnagram[0] = false;
             }
         });
