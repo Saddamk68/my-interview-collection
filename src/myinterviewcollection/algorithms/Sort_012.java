@@ -14,6 +14,10 @@ public class Sort_012 {
         int[] arr = {0, 1, 2, 1, 0, 0, 2, 2, 2, 2, 0, 2, 1, 0, 2, 0, 1, 2, 2};
         sort(arr);
         printArr(arr);
+        
+        int[] nums = {3, 6, 8, 0, 5, 9, 1, 4, 2, 7, 3, 0, 5, 2, 6, 4, 7, 8, 9, 1};
+        sort_0to9(nums);
+        printArr(nums);
     }
     
     /**
@@ -49,6 +53,29 @@ public class Sort_012 {
         for (int i : arr) {
             System.out.print(i + " ");
         }
+    }
+    
+    /**
+     * The counting phase has a time complexity of O(n), where n is the number of elements in the array.
+     * The reconstruction phase also has a time complexity of O(n).
+     * Therefore, the overall time complexity is O(n), making this approach very efficient.
+     * 
+     * Time Complexity : O(n)
+     */
+    public static int[] sort_0to9(int[] arr) {
+        int count[] = new int[10];
+        for (int num : arr) {
+            count[num]++;
+        }
+        
+        int index = 0;
+        for (int i=0; i<count.length; i++) {
+            while(count[i] > 0) {
+                arr[index++] = i;
+                count[i]--;
+            }
+        }
+        return arr;
     }
     
 }
