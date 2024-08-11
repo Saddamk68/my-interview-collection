@@ -5,7 +5,7 @@
  */
 package myinterviewcollection.dataStructure.mainMethodCall;
 
-import myinterviewcollection.dataStructure.searchalgorithm.BinarySearch;
+import myinterviewcollection.algorithms.search.BinarySearch;
 
 /**
  *

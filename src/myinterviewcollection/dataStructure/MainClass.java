@@ -12,11 +12,11 @@ import myinterviewcollection.dataStructure.mainMethodCall.DoublyLinkedListMainMe
 import myinterviewcollection.dataStructure.mainMethodCall.LinkedListMainMethod;
 import myinterviewcollection.dataStructure.mainMethodCall.MainMethodInterface;
 import java.util.Arrays;
-import myinterviewcollection.dataStructure.sortingalgorithm.BubbleSort;
-import myinterviewcollection.dataStructure.sortingalgorithm.InsertionSort;
-import myinterviewcollection.dataStructure.sortingalgorithm.MergeSort;
-import myinterviewcollection.dataStructure.sortingalgorithm.SelectionSort;
-import myinterviewcollection.dataStructure.sortingalgorithm.QuickSort;
+import myinterviewcollection.algorithms.sorting.BubbleSort;
+import myinterviewcollection.algorithms.sorting.InsertionSort;
+import myinterviewcollection.algorithms.sorting.MergeSort;
+import myinterviewcollection.algorithms.sorting.SelectionSort;
+import myinterviewcollection.algorithms.sorting.QuickSort;
 
 /**
  *
