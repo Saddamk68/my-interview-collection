@@ -127,8 +127,8 @@ public class EmployeeProblems {
     public static void findMaxSalariedEmployeeOfEachDepartment(List<Employee> empList) {
         Map<String, Optional<Employee>> maxSalaryEmployeesByDepartment = empList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment,
-                        Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
-//                        Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+//                        Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+                        Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
 //                .entrySet().forEach(entry -> System.out.println(entry.getValue().get().getName()));
         
         maxSalaryEmployeesByDepartment.forEach((department, emp) -> {

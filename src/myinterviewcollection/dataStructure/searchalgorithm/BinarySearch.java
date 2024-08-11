@@ -13,6 +13,7 @@ package myinterviewcollection.dataStructure.searchalgorithm;
 /**
  * Binary Search works with only sorted elements
  * sorting order does not matters here
+ * O(log n)
  */
 public class BinarySearch {
     

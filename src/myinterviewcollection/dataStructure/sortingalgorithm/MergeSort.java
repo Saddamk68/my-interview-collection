@@ -10,6 +10,7 @@ import java.util.Arrays;
 /**
  *
  * @author Saddam Khan
+ * O(n log n)
  */
 public class MergeSort {
     
