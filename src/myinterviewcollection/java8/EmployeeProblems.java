@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import myinterviewcollection.util.Employee;
 
@@ -36,6 +37,8 @@ public class EmployeeProblems {
         empList.add(new Employee(9, "Elson", "Marketing", 22000));
         empList.add(new Employee(10, "Elen", "Marketing", 25000));
         empList.add(new Employee(11, "Adam", "Engineering", 60000));
+        
+        listToMap(empList);
         
         findMaxSalariedEmployees(empList);
         
@@ -184,6 +187,22 @@ public class EmployeeProblems {
 //                        .thenComparing(Collections.reverseOrder(Comparator.comparing(Employee::getSalary))))
                         .thenComparing(Comparator.comparing(Employee::getSalary).reversed()))
                 .toList();
+    }
+
+    /**
+     * @company : Altimetrik
+     * @implementedFuntions : Collectors.toMap()
+     * converting a list of employee object to map 
+     * where key is id and value is entire employee object
+     */
+    public static void listToMap(List<Employee> empList) {
+        System.out.println("Converting list of employee to map");
+        Map<Integer, Employee> map = empList.stream()
+                .collect(Collectors.toMap(Employee::getId, Function.identity()));
+        
+        map.entrySet().forEach(entry -> {
+            System.out.println("Key : " + entry.getKey() + " and Value is : " + entry.getValue());
+        });
     }
     
 }

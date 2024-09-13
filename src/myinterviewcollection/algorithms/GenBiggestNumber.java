@@ -17,11 +17,11 @@ public class GenBiggestNumber {
         int[] arr = {8, 9, 7, 50, 54, 60};
 //        int[] arr = {0,0,0,0,0};
 
-        String largestNumber = findLargestNumber(arr);
+        String largestNumber = genLargestNumber(arr);
         System.out.println("Largest number formed: " + largestNumber);
     }
 
-    public static String findLargestNumber(int[] arr) {
+    public static String genLargestNumber(int[] arr) {
         // Convert the integer array to a String array
         String[] strArr = Arrays.stream(arr)
                                 .mapToObj(String::valueOf)

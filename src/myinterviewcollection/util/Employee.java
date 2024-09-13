@@ -54,6 +54,11 @@ public class Employee {
         this.salary = salary;
     }
     
+    @Override
+    public String toString() {
+        return this.id + " " + this.name + " " + this.department + " " + this.salary;
+    }
+    
     // Rest of the Employee class code
     // Override equals and hashCode methods
     @Override
