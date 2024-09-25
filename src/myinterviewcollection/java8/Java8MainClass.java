@@ -56,6 +56,9 @@ public class Java8MainClass {
                 
         System.out.println(java8FeatureImpl.isAnagramString("AAAABBBCC", "AABBBAACC"));
         
+        System.out.println("Palindrom number for given range are : ");
+        java8FeatureImpl.printPalindrom(1000);
+        
     }
 
 }

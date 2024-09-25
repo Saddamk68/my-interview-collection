@@ -313,6 +313,31 @@ public class Java8FeaturesImpl {
     }
     
     /**
+     * @company : Citi Bank
+     * @implementedFuntions : IntStream, rangeClosed(), filter
+     * print all palindrome numbers for the given range
+     */
+    public void printPalindrom(int range) {
+        IntStream.rangeClosed(0, range)
+                .filter(num -> isPalindrom(num))
+                .forEach(System.out::println);
+    }
+    
+    public boolean isPalindrom(int num) {
+        if (num < 11) return false;
+        
+        int original = num;
+        int reverse = 0;
+        
+        while (num != 0) {
+            int rem = num%10;
+            reverse = reverse*10 + rem;
+            num /= 10;
+        }
+        return original == reverse;
+    }
+    
+    /**
      * @Data : creating dummy data
      */
     public List<Order> getOrderListData() {

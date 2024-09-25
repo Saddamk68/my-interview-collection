@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -48,6 +49,9 @@ public class EmployeeProblems {
         
         System.out.println("sortEmployeeOnThereNameAndSalary : ");
         print(sortEmployeeOnThereNameAndSalary(empList));
+        
+        groupEmployeeByDepartment(empList);
+        
         /**
          * This will does the same thing as sortEmployeeOnThereNameAndSalary method does
          */
@@ -147,11 +151,12 @@ public class EmployeeProblems {
     
     /**
      * @company : 
-     * @implementedFuntions : map, distinct, sorted, reverseOrder, skip, findFirst, get
+     * @implementedFuntions : Objects.nonNull(), map, distinct, sorted, reverseOrder, skip, findFirst, get
      * find the k'th highest salary where k is an integer given by user
      */
     public static double findKthHighestSalary(List<Employee> empList, int k) {
         return empList.stream()
+                .filter(Objects::nonNull) // to filter null Employee object
                 .map(Employee::getSalary)
                 .distinct()
                 .sorted(Comparator.reverseOrder())
@@ -202,6 +207,15 @@ public class EmployeeProblems {
         
         map.entrySet().forEach(entry -> {
             System.out.println("Key : " + entry.getKey() + " and Value is : " + entry.getValue());
+        });
+    }
+    
+    public static void groupEmployeeByDepartment(List<Employee> empList) {
+        Map<String, List<Employee>> map = empList.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment));
+        
+        map.entrySet().forEach(entry -> {
+            System.out.println("Department is : " + entry.getKey() + " and Employees are : " + entry.getValue());
         });
     }
     
