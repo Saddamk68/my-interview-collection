@@ -163,6 +163,13 @@ public class Java8FeaturesImpl {
                 .sorted(Collections.reverseOrder(Comparator.comparing(String::length)))
                 .forEach(System.out::println);
     }
+    
+    public void sortGivenIntegerList(List<Integer> list) {
+        System.out.println("Sort Integer list in dcending order : ");
+        list.stream()
+                .sorted(Comparator.reverseOrder())
+                .forEach(System.out::println);
+    }
 
     /**
      * @company :
@@ -318,9 +325,27 @@ public class Java8FeaturesImpl {
      * print all palindrome numbers for the given range
      */
     public void printPalindrom(int range) {
-        IntStream.rangeClosed(0, range)
+        Arrays.stream(generateNaturalNumber(range))
                 .filter(num -> isPalindrom(num))
                 .forEach(System.out::println);
+    }
+    
+    /**
+     * @company : 
+     * @implementedFuntions : IntStream, rangeClosed(), toArray()
+     * generate natural numbers
+     */
+    public int[] generateNaturalNumber(int range) {
+        return IntStream.rangeClosed(1, range).toArray();
+    }
+    
+    /**
+     * @company : 
+     * @implementedFuntions : IntStream, rangeClosed(), toArray()
+     * generate whole numbers
+     */
+    public int[] generateWholeNumber(int range) {
+        return IntStream.rangeClosed(0, range).toArray();
     }
     
     public boolean isPalindrom(int num) {

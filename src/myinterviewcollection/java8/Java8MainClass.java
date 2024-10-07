@@ -38,6 +38,10 @@ public class Java8MainClass {
         System.out.println("Max length string is : " + java8FeatureImpl.findMaxLengthWordFromGivenString(strDollar));
         java8FeatureImpl.sortGivenStringUsingStream(strDollar);
         
+        List<Integer> intList2 = Arrays.asList(10, 15, 8, 49, 25, 98, 12);
+        java8FeatureImpl.sortGivenIntegerList(intList2);
+        
+        
         int[] intArr = {1, 2, 3, 4, 5, 6, 7, 8, 2, 7, 7, 6};
         java8FeatureImpl.filterOddEvenNumber(intArr);
         
@@ -56,7 +60,7 @@ public class Java8MainClass {
                 
         System.out.println(java8FeatureImpl.isAnagramString("AAAABBBCC", "AABBBAACC"));
         
-        System.out.println("Palindrom number for given range are : ");
+        System.out.println("Palindrom numbers for given range are : ");
         java8FeatureImpl.printPalindrom(1000);
         
     }

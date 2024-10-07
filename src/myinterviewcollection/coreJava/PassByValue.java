@@ -25,6 +25,13 @@ public class PassByValue {
         instance.m1(instance, z);
         System.out.println(instance.toString() + " 5 : " + instance.intVal + " " + z);
         
+        
+        System.out.println("Hello World!");
+        Employee emp = new Employee(1, "A");
+
+        System.out.println("Object - Before: " + emp.id + ", " + emp.name);
+        callMethod(emp);
+        System.out.println("Object - After: " +  + emp.id + ", " + emp.name);
     }
     
     /**
@@ -58,4 +65,20 @@ public class PassByValue {
         
     }
     
+    public static void callMethod(Employee e) {
+        e.id = 2;
+        e.name = "B";
+        e = new Employee(3, "C");
+    }
+    
+}
+
+class Employee {
+    int id;
+    String name;
+
+    public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
