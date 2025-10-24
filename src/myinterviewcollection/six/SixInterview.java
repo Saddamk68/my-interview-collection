@@ -7,19 +7,16 @@ import java.util.stream.Collectors;
 public class SixInterview {
 
     public static void main(String[] args) {
-        System.out.println(SimpleUtils.findNaturalNumber("adere343dfd073dfdfd2"));
+        System.out.println(findNaturalNumber("adere343dfd073dfdfd2"));
 
-        SimpleUtils.printDigits("adere343dfd073dfdfd2");
+        printDigits("adere343dfd073dfdfd2");
 
-        SimpleUtils.printDigitsUsingRegex("adere343dfd073dfdfd2");
+        printDigitsUsingRegex("adere343dfd073dfdfd2");
 
-        SimpleUtils.printDigitsUsingStreams("adere343dfd073dfdfd2");
+        printDigitsUsingStreams("adere343dfd073dfdfd2");
 
     }
 
-}
-
-class SimpleUtils {
 
     public static Long findNaturalNumber(String fAlpsNum) {
         String digitsOnly = fAlpsNum.replaceAll("\\D+", "");
