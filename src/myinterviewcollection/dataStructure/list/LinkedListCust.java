@@ -176,7 +176,8 @@ public class LinkedListCust {
         tail = temp;        
         Node after = null;
         Node before = null;
-        for (int i = 0; i < length; i++) {
+//        for (int i = 0; i < length; i++) {
+        while (temp != null) {
             after = temp.next;
             temp.next = before;
             before = temp;

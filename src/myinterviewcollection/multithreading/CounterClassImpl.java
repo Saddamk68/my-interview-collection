@@ -4,6 +4,7 @@
  */
 package myinterviewcollection.multithreading;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,7 +13,9 @@ import java.util.logging.Logger;
  * @author saddam
  */
 public class CounterClassImpl {
-    
+
+    static volatile AtomicInteger count = new AtomicInteger(0);
+
     public static void main(String[] arg) {
         
         // print count using multiple threads
@@ -20,7 +23,8 @@ public class CounterClassImpl {
             for (int i=0; i<20; i++) {
 //                CounterClass.syncIncrementAndGet("Thread 1 : ");
                 synchronized (System.out) {
-                    System.out.println("Thread 1 : " + CounterClass.incrementAndGet());
+                    System.out.println("Thread 1 : " + count.incrementAndGet());
+//                    System.out.println("Thread 1 : " + CounterClass.incrementAndGet());
                 }
                 try {
                     Thread.sleep(100);
@@ -34,7 +38,8 @@ public class CounterClassImpl {
             for (int i=0; i<20; i++) {
 //                CounterClass.syncIncrementAndGet("Thread 2 : ");
                 synchronized (System.out) {
-                    System.out.println("Thread 2 : " + CounterClass.incrementAndGet());
+                    System.out.println("Thread 2 : " + count.incrementAndGet());
+//                    System.out.println("Thread 2 : " + CounterClass.incrementAndGet());
                 }
                 try {
                     Thread.sleep(100);
@@ -52,7 +57,7 @@ public class CounterClassImpl {
             th2.join();
         } catch (InterruptedException ex) {
             Logger.getLogger(MultiThreading.class.getName()).log(Level.SEVERE, null, ex);
-        }        
+        }
     }
     
 }

@@ -45,9 +45,10 @@ public class GenBiggestNumber {
 
         // Build the largest number by concatenating sorted strings
         StringBuilder largestNumber = new StringBuilder();
-        for (String num : strArr) {
-            largestNumber.append(num);
-        }
+//        for (String num : strArr) {
+//            largestNumber.append(num);
+//        }
+        Arrays.stream(strArr).forEach(largestNumber::append);
 
         return largestNumber.toString();
     }

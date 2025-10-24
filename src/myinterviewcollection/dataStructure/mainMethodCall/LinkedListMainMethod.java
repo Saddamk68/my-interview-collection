@@ -85,6 +85,8 @@ public class LinkedListMainMethod implements MainMethodInterface {
         myLinkedList.addLast(6);
         myLinkedList.addLast(6);
         myLinkedList.insert(3, 5);
+        System.out.println("\nLinked List before reverse():");
+        myLinkedList.printList();
         myLinkedList.reverse();
         System.out.println("\nLinked List after reverse():");
         myLinkedList.printList();

@@ -65,7 +65,7 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : mapToObj, groupingBy(), LinkedHashMap, findFirst()
+     * @implementedFuntions : sorted()
      * sort integer list to ASC order
      */
     public List<Integer> sortList(List<Integer> intList) {
@@ -76,7 +76,7 @@ public class Java8FeaturesImpl {
 
     /**
      * @company :
-     * @implementedFuntions : mapToObj, groupingBy(), LinkedHashMap, findFirst()
+     * @implementedFuntions : map()
      * multiply each element of the list to given value
      */
     public List<Integer> multiplyEachElement(List<Integer> intList, int val) {
@@ -147,7 +147,7 @@ public class Java8FeaturesImpl {
         return Arrays.stream(str.split(" "))
                 .max(Comparator.comparingInt(String::length))
                 .get();
-//        return Arrays.stream(strDollar.split(" "))
+//        return Arrays.stream(str.split(" "))
 //                .max((s1, s2) -> s1.length() - s2.length())
 //                .get();
     }
@@ -155,12 +155,13 @@ public class Java8FeaturesImpl {
     /**
      * @company :
      * @implementedFuntions : sorted, reverseOrder() 
-     * find max length word from a given sentence
+     * sort the list of string in descending order
      */
     public void sortGivenStringUsingStream(String str) {
-        System.out.println("Sort string list in dcending order : ");
+        System.out.println("Sort string list in descending order : ");
         Arrays.stream(str.split(" "))
                 .sorted(Collections.reverseOrder(Comparator.comparing(String::length)))
+//                .sorted((s1, s2) -> s2.length() - s1.length())
                 .forEach(System.out::println);
     }
     
@@ -179,7 +180,7 @@ public class Java8FeaturesImpl {
     public void filterOddEvenNumber(int[] arr) {
         List<Integer> list = Arrays.stream(arr)
                 .boxed()
-                .collect(Collectors.toList());
+                .toList();
 
         Map<Boolean, List<Integer>> result = list.stream()
                 .collect(Collectors.partitioningBy(num -> num % 2 == 0));
@@ -312,7 +313,7 @@ public class Java8FeaturesImpl {
         boolean[] isAnagram = new boolean[1];
         isAnagram[0] = true;
         map1.entrySet().stream().forEach(entry -> {
-            if (entry.getValue().equals(map2.get(entry.getKey()))) {
+            if (!entry.getValue().equals(map2.get(entry.getKey()))) {
                 isAnagram[0] = false;
             }
         });

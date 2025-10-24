@@ -120,6 +120,7 @@ public class EmployeeProblems {
         
         empList.stream()
                 .filter(emp -> emp.getSalary() == maxSalary)
+//                .sorted(Comparator.comparing(Employee::getName))
                 .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
                 .forEach(emp -> {
                     System.out.println("Emp Name : " + emp.getName() + " Emp Salary : " + emp.getSalary());

@@ -16,7 +16,7 @@ public class RunTimePolymorphism {
     }
 }
 
-class A {
+class A1 {
 
     public void method(int num, String str) {
         System.out.println("This is A class");
@@ -26,13 +26,13 @@ class A {
         System.out.println("This is A class");
         return num;
     }
-	
+
 }
 
-class B extends A {
+class B extends A1 {
 
     public void method(int num, String str) {
         System.out.println("This is B class");
     }
-    
+
 }

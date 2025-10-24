@@ -9,6 +9,7 @@ package myinterviewcollection.coreJava;
  * @author saddam
  */
 public class CompileTimePolymorphism {
+
     public static void main(String arg[]) {
         A a = new A();
         a.method("Hi", 1);
@@ -29,7 +30,7 @@ class A {
     }
 
     protected int method(String str, int num) {
-        System.out.println("String : " + str + "num : " + num);
+        System.out.println("String : " + str + " num : " + num);
         return num;
     }
 	

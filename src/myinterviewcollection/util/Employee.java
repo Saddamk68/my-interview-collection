@@ -63,7 +63,7 @@ public class Employee {
     // Override equals and hashCode methods
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass())
+        if (obj == null || this.getClass() != obj.getClass())
             return false;
         if (this == obj)
             return true;

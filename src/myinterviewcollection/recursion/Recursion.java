@@ -20,6 +20,7 @@ public class Recursion {
         if (str.isBlank()) return str;
         
         return reverseTheString(str.substring(1)) + str.charAt(0);
+//        return str.charAt(str.length()-1) + reverseTheString(str.substring(0, str.length()-1));
     }
     
     public static int factorial(int num) {

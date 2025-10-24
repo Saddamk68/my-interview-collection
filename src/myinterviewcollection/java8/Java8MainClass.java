@@ -7,6 +7,7 @@ package myinterviewcollection.java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -15,6 +16,8 @@ import java.util.List;
 public class Java8MainClass {
 
     public static void main(String[] arg) {
+        Optional<String> opt = Optional.of("Java8");
+
         Java8FeaturesImpl java8FeatureImpl = new Java8FeaturesImpl();
 
         String[] strArr = {"jaVa", "Spring", "Microservices", "java", "SqL", "Java", "cLoud", "spring"};
@@ -61,7 +64,7 @@ public class Java8MainClass {
         System.out.println(java8FeatureImpl.isAnagramString("AAAABBBCC", "AABBBAACC"));
         
         System.out.println("Palindrom numbers for given range are : ");
-        java8FeatureImpl.printPalindrom(1000);
+        java8FeatureImpl.printPalindrom(100);
         
     }
 
